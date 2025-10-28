@@ -7,16 +7,13 @@ test("renders without errors", () => {
   expect(() => render(<App />)).not.toThrow();
 });
 
-test("renders the correct child components", () => {
-  const { container } = render(<App />);
-
-  /*
-    Uncomment the line below to see the DOM elements being returned
-    by the App component in your terminal when you run the tests
-  */
-  // screen.debug();
-
-  expect(container.querySelector("nav")).toBeInTheDocument();
-  expect(container.querySelector("#home")).toBeInTheDocument();
-  expect(container.querySelector("#about")).toBeInTheDocument();
+test("renders the shopping list app", () => {
+  render(<App />);
+  
+  // Check for main components
+  expect(screen.getByRole("heading", { name: /shopster/i })).toBeInTheDocument();
+  expect(screen.getByPlaceholderText("Search...")).toBeInTheDocument();
+  expect(screen.getByLabelText(/name:/i)).toBeInTheDocument();
+  expect(screen.getByLabelText(/category:/i)).toBeInTheDocument();
+  expect(screen.getByRole("button", { name: /add to list/i })).toBeInTheDocument();
 });

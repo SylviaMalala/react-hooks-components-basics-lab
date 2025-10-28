@@ -7,58 +7,108 @@
 body {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
+  padding: 20px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Playfair Display", serif;
-  margin-bottom: 1em;
+.App {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  margin: 0 1rem;
-  text-decoration: none;
-  font-size: 1.2em;
-  color: firebrick;
-  border-bottom: 2px solid firebrick;
-  transition: 0.1s;
-}
-
-nav a:hover,
-nav a:active {
-  color: tomato;
-  border-bottom: 2px solid tomato;
-}
-
-#home,
-#about {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+header {
   text-align: center;
-  height: 50vh;
-  min-height: 400px;
+  margin-bottom: 2rem;
+}
+
+header h2 {
+  font-family: "Playfair Display", serif;
+  color: #333;
+  font-size: 2.5rem;
+  margin-bottom: 0;
+}
+
+.Filter {
+  margin-bottom: 1rem;
+}
+
+.Filter input, .Filter select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.NewItem {
+  background: #f9f9f9;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.NewItem label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.NewItem input, .NewItem select {
+  display: block;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.NewItem button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.NewItem button:hover {
+  background: #0056b3;
+}
+
+.Items {
+  list-style: none;
+}
+
+.Items li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 1rem;
+  margin-bottom: 0.5rem;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  background: white;
 }
 
-#home {
-  background-color: cornsilk;
+.Items li.Produce {
+  border-left: 4px solid #28a745;
 }
 
-#about img {
-  max-height: 50%;
+.Items li.Dairy {
+  border-left: 4px solid #ffc107;
+}
+
+.Items li.Dessert {
+  border-left: 4px solid #dc3545;
+}
+
+.Items li .category {
+  color: #666;
+  font-size: 0.9rem;
+  font-style: italic;
 }
